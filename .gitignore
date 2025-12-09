@@ -132,3 +132,6 @@ dmypy.json
 .pyre/
 /.project
 /.pydevproject
+
+# .DS_Store
+.DS_Store
