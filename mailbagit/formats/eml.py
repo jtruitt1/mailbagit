@@ -46,8 +46,9 @@ class EML(EmailAccount):
         if os.path.isfile(self.path):
             return 1
         count = 0
-        for _ in chain((files for _, _, files in os.walk(self.path))):
-            count += 1
+        for file in chain.from_iterable((files for _, _, files in os.walk(self.path))):
+            if '.eml' in file:
+                count += 1
         return count
 
     def messages(self):
